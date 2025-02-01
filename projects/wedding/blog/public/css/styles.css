@@ -1,0 +1,220 @@
+:root {
+      --dark: #212529;
+      --display1: 24.55px;
+      --displayText: 16px;
+      --textColor: #212529;
+      --border-color: #6c757d;
+      --bg-color: rgb(244,245,247);
+      --nav-height: 1rem;
+      --footer-height:1.5rem;
+      --success: 25,135,84;
+      --success-text-color: #0f5132;
+}
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+body {
+      /* color: var(--textColor); */
+      /* font-family: "montserrat"; */
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--textColor);
+      background-color: #ffffff;
+}
+footer {
+      padding: var(--footer-height);
+}
+.container {
+      width: 90vw;
+      margin: auto;
+}
+nav {
+      color: #ffffff;
+      background-color: var(--dark);
+      height: 50px;
+      display: flex;
+}
+nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+      column-gap: 30px;
+      padding: var(--nav-height);
+}
+nav .options {
+      display: none;
+}
+nav .hamburger {
+      position: absolute;
+      right: 10vw;
+      top: 55%;
+      transform: translateY(-50%);
+}
+nav .hamburger div {
+      border-top: 2px solid #ffffff;
+      width: 25px;
+      margin-bottom: 5px;
+}
+ul {
+      list-style-type: none;
+      display: flex;
+      gap: 15px;
+}
+.latest-article {
+      padding-bottom: 18.5px;
+      border-bottom: solid 8px var(--border-color);
+}
+.latest-article .author {
+      display: none;
+}
+.item {
+      margin-bottom: 1.25rem;
+}
+.header {
+      font-size: var(--display1);
+      margin-bottom: 25px;
+}
+#posts .header {
+      margin-bottom: 0;
+}
+.latest-article picture .article {
+      width: 100vw;
+      height: 210px;
+      object-fit: cover;
+      object-position: center;
+      margin-bottom: 18.5px;
+}
+p.text {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+}
+.two-column-display .details {
+      font-size: 10px;
+      margin-bottom: 5px;
+}
+.latest-article .details {
+      margin-bottom: 18.5px;
+}
+.article-array .item {
+      padding: 14px 18px;
+      display: flex;
+      border-bottom: solid 8px var(--border-color);
+}
+.article-array picture .article {
+      height: 86px;
+      width: 30vw;
+      object-fit: cover;
+      object-position: top;
+}
+.article-array .content-right {
+      padding-left: 12px;
+}
+.article-array .content-right p {
+      display: none;
+}
+.article-array .details {
+      margin-top: 10px;
+}
+footer {
+      height: 10vh;
+      background-color: var(--dark);
+}
+/* section#register-form {
+      background-color: rgba(248,249,250,1);
+      background-color: pink;
+      height: 100vh;
+} */
+ .form-container {
+      height: 100vh;
+ }
+.card {
+      background-color: rgba(248,249,250,1);
+      height: 100%;
+      padding-bottom: 3rem;
+}
+
+.card .head{
+      padding-top: 1.5rem;
+      margin-bottom: 1rem;
+}
+.card .head h2{
+      font-size: 1.5rem;
+}
+.card .head p{
+      font-size: 0.75rem;
+}
+.card .body .input-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+}
+.card .body .input-group label {
+      font-size: 0.75rem;
+      margin-bottom: 0.50rem;
+}
+.card .body .input-group input, textarea {
+      display: block;
+      width: 100%;
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #212529;
+      background-color: #fff;
+      border: 1px solid #ced4da;
+      appearance: none;
+      border-radius: 0.375rem;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.card .body .input-group .is-invalid {
+      border-color: #dc3545;
+}
+.card .body .input-group .is-invalid + .error_message {
+      color: #dc3545;
+}
+
+.card .button-cotainer {
+      display: flex;
+}
+.btn {
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #212529;
+      border-width: 1px;
+      border-radius: 0.5rem;
+      border: none;
+}
+ .btn.submit {
+      background-color: #198754;
+      width: 100%;
+      margin-bottom: 1.25rem;
+      color:#fff;
+}
+.card .body .btn.alternative {
+      background-color: #f8f9fa;
+      width: 100%;
+      border: 0.5px solid #ced4da;
+}
+.msg-success {
+      margin-bottom: 10px;
+      border: 1px solid rgba(var(--success), 1);
+      padding: 6px 12px;
+      border-radius: 0.375rem;
+      line-height: 1.5;
+      color: var(--success-text-color);
+      background-color: rgba(var(--success),0.25) ;
+
+}
+

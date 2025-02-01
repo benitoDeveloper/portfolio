@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteRule ^$ public/ [L]
+  RewriteRule (.*) public/$1 [L]
+</IfModule>
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteBase /projects/wedding/
+    
+#     # Redirect root URL to public folder
+#     RewriteRule ^$ public/ [L]
+    
+#     # Redirect all other requests to the public folder
+#     RewriteRule ^(.*)$ public/$1 [L]
+# </IfModule>
