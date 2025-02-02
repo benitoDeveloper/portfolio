@@ -73,9 +73,15 @@ page_header();
                 <li>Comptia A+ 220 certified</li>
                 <li>Next Steps: Currently updating my portfolio to show the new skills I've learned in the past months, OOP, MVC design pattern, git and github</li>
             </ul>
-
-
           </div>
+          <a href="#projects">
+            <div class="card-btn">View my projects</div>
+          </a>
+          <a href="#contact">
+            <div class="card-btn">Contact Me</div>
+          </a>
+          
+
         </div>
         <div class="introduction-image"></div>
       </section>

@@ -295,6 +295,9 @@ p,li {
   line-height: 0.5;
   margin-bottom: 16px;
 }
+a {
+  text-decoration: none;
+}
 .card-btn {
   display: block;
   border-radius: 5px;

@@ -3,7 +3,7 @@
 Class Database {
 
     static function get_db_connection (){
-        $server_name = "localhost";
+        $server_name = "localhost:3307";
         $db_name = "portfolio";
         $db_username = "pma";
         $db_password= "";
