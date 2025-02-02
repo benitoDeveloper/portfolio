@@ -1,11 +1,11 @@
 <?php
-class core
+class Core
 {
       protected $current_controller = "Pages";
       protected $current_method = "index";
       protected $params = [];
 
-      public function __contruct()
+      public function __construct()
       {
             $url = empty($this->get_url())? ['Pages'] : $this->get_url();
 
@@ -14,7 +14,7 @@ class core
                   $this->current_controller = $url[0];
                   unset($url[0]);
             }
-            require_once(APPROOT . "controller/" . $url[0] . ".php");
+            require_once(APPROOT . "controllers/" . $this->current_controller . ".php");
             $this->current_controller = new $this->current_controller;
 
             if(isset($url[1]) && method_exists($this->current_controller, $url[1]))
