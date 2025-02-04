@@ -15,42 +15,42 @@ const cards_holder = document.querySelector(".card-holder");
 
 
 // ---------------------------------->> Slider
-let currentSlide = 0;
-const mobile_screen = window.matchMedia("(max-width: 720px)");
-let maxSlides = mobile_screen.matches ? (all_cards.length-1) : Math.ceil((all_cards.length - 1)/3);
+// let currentSlide = 0;
+// const mobile_screen = window.matchMedia("(max-width: 720px)");
+// let maxSlides = mobile_screen.matches ? (all_cards.length-1) : Math.ceil((all_cards.length - 1)/3);
 
-if(mobile_screen.matches) {
-  nav.classList.toggle("active");
-}
+// if(mobile_screen.matches) {
+//   nav.classList.toggle("active");
+// }
 
-const move_slider = function (e) {
-  if(!e.target.classList.contains("fa-solid")) return;
-  maxSlides = mobile_screen.matches ? (all_cards.length-1) : Math.ceil((all_cards.length - 1)/3);
-  if (e.target.classList.contains("fa-arrow-left")) {
-    if (currentSlide === 0) {
-      currentSlide = maxSlides;
-    } else {
-      currentSlide--;
-    }
-  }
-  else {
-    if (currentSlide === maxSlides) {
-      currentSlide = 0;
-    } else {
-      currentSlide++;
-    }
-  }
-  if(!mobile_screen.matches) {
-    indicator_container.querySelector(".indicator-active").classList.remove("indicator-active");
-    indicator_container.querySelector(`div[data-indicator='${currentSlide.toString()}']`).classList.add("indicator-active");
-    project_slider_track.style.transform = `translateX(${100 * (currentSlide*-1)}%)`;
-  }
-  else {
-    const screen_width = cards_holder.offsetWidth;
-    project_slider_track.style.transform = `translateX(${screen_width * (currentSlide*-1)}px)`;
-  }
+// const move_slider = function (e) {
+//   if(!e.target.classList.contains("fa-solid")) return;
+//   maxSlides = mobile_screen.matches ? (all_cards.length-1) : Math.ceil((all_cards.length - 1)/3);
+//   if (e.target.classList.contains("fa-arrow-left")) {
+//     if (currentSlide === 0) {
+//       currentSlide = maxSlides;
+//     } else {
+//       currentSlide--;
+//     }
+//   }
+//   else {
+//     if (currentSlide === maxSlides) {
+//       currentSlide = 0;
+//     } else {
+//       currentSlide++;
+//     }
+//   }
+//   if(!mobile_screen.matches) {
+//     indicator_container.querySelector(".indicator-active").classList.remove("indicator-active");
+//     indicator_container.querySelector(`div[data-indicator='${currentSlide.toString()}']`).classList.add("indicator-active");
+//     project_slider_track.style.transform = `translateX(${100 * (currentSlide*-1)}%)`;
+//   }
+//   else {
+//     const screen_width = cards_holder.offsetWidth;
+//     project_slider_track.style.transform = `translateX(${screen_width * (currentSlide*-1)}px)`;
+//   }
 
-}
+// }
 
 // ---------------------------------- Section Fade in
 const sectionFadeIn = function (entries, observer) {
@@ -129,9 +129,9 @@ indicator_container.addEventListener("click", function(e){
   currentSlide = e.target.getAttribute("data-indicator");
   project_slider_track.style.transform = `translateX(${100 * (currentSlide*-1)}%)`;
 })
-project_slider_container.addEventListener("click", function(e) {
-  move_slider(e);
-})
+// project_slider_container.addEventListener("click", function(e) {
+//   move_slider(e);
+// })
 
 
 
