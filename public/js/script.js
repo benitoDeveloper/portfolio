@@ -9,7 +9,6 @@ const lazyElements = document.querySelectorAll("img");
 const allSlides = document.querySelector("slide");
 const project_slider_container = document.querySelector(".projects-slider-container");
 const project_slider_track = document.querySelector(".projects-slider-track");
-const indicator_container = document.querySelector(".indicator-container");
 const accordion = document.querySelector(".accordion");
 const cards_holder = document.querySelector(".card-holder");
 
@@ -122,13 +121,13 @@ nav.addEventListener("click", function(e){
   nav.querySelector('.hamburger').classList.toggle("active");
   nav.querySelector('.nav-menu').classList.toggle("active");
 })
-indicator_container.addEventListener("click", function(e){
-  if (!e.target.classList.contains("indicator")) return;
-    indicator_container.querySelector(".indicator-active").classList.remove("indicator-active");
-  e.target.classList.add("indicator-active");
-  currentSlide = e.target.getAttribute("data-indicator");
-  project_slider_track.style.transform = `translateX(${100 * (currentSlide*-1)}%)`;
-})
+// indicator_container.addEventListener("click", function(e){
+//   if (!e.target.classList.contains("indicator")) return;
+//     indicator_container.querySelector(".indicator-active").classList.remove("indicator-active");
+//   e.target.classList.add("indicator-active");
+//   currentSlide = e.target.getAttribute("data-indicator");
+//   project_slider_track.style.transform = `translateX(${100 * (currentSlide*-1)}%)`;
+// })
 // project_slider_container.addEventListener("click", function(e) {
 //   move_slider(e);
 // })
