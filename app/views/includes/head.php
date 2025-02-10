@@ -24,6 +24,7 @@ $menu_arr = ["home", "hola!", "projects", "contact"];
         <script defer src="<?=URLROOT?>public/js/script.js"></script>
         <script defer src="<?=URLROOT?>public/js/slider.js"></script>
 
+
         <title>BB7</title>
     </head>
     <body>

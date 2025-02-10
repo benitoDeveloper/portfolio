@@ -1,13 +1,53 @@
-class Slider {
+class Slider_indicator
+{
+      buildIndicator(slidesCount, element)
+      {
+            const indicator_element = element;
+            indicator_element.innerHTML = '';
+            for(let i = 0; i <= slidesCount; i++)
+            {
+                  const indicator = document.createElement('div');
+                  indicator.setAttribute('data-indicator', i);
+                  indicator.classList.add('indicator');
+                  if(i === 0)
+                  {
+                        indicator.classList.add('indicator-active');
+                  }
+                  indicator_element.appendChild(indicator);
+
+            }
+      }
+      switch_indicator(indicator_container, index)
+      {
+            const currentIndicator = indicator_container.querySelector(".indicator-active");
+            if(currentIndicator)
+            {
+                  currentIndicator.classList.remove('indicator-active')
+            }
+
+            const newIndicator = indicator_container.querySelector(`div[data-indicator='${index}']`);
+            if(newIndicator)
+            {
+                  newIndicator.classList.add("indicator-active");
+            }
+      }
+}
+
+class Slider 
+{
       index = 0;
       totalCards;
       maxSlides;
       slide_element;
+      indicator_element;
       slide_arr = [];
       screen_size;
+      indicator;
 
-      constructor(totalCards, slide_element)
+      constructor(totalCards, slide_element, indicator_element)
       {
+            this.indicator = new Slider_indicator();
+            this.indicator_element = indicator_element;
             this.slide_element = slide_element;
             this.totalCards = totalCards;
             this.update_screen_size();
@@ -38,9 +78,9 @@ class Slider {
       }
       update_slide_arr() 
       {         
-            let slide_width = this.slide_element.getBoundingClientRect().width;
+            const slide_width = this.slide_element.getBoundingClientRect().width;
             this.slide_arr = [];
-            for(var i = 0; i<= this.totalCards; i++) 
+            for(var i = 0; i<= this.maxSlides; i++) 
             {
                   this.slide_arr.push(slide_width * i);
             }
@@ -55,57 +95,59 @@ class Slider {
             {
                   return this.maxSlides = this.totalCards - 1;
             }
-            if(this.screen_size > 600 && this.screen_size < 1000)
+            if(this.screen_size > 600 && this.screen_size <= 1000)
             {
-                  return this.maxSlides = Math.ceil((this.totalCards - 1)/2);
+                  this.maxSlides = Math.floor((this.totalCards - 1)/2);
+                  this.indicator.buildIndicator(this.maxSlides,this.indicator_element);
+                  return 
             }
-            this.maxSlides = Math.ceil((this.totalCards - 1)/3);
+            if(this.screen_size > 1000)
+            {
+                  this.maxSlides = Math.floor((this.totalCards - 1)/3);
+                  this.indicator.buildIndicator(this.maxSlides,this.indicator_element);
+                  return
+            }
       }
 }
 
 const slider_container = document.querySelector(".projects-slider-container");
+const sliderTrack = slider_container.querySelector('.projects-slider-track');
+const sliderElement = slider_container.querySelector('.projects-slider-track-holder');
 const allCards = Array.from(slider_container.querySelectorAll(".card-holder"));
 const allCardsCount = allCards.length;
-let sliderElement = slider_container.querySelector('.projects-slider-track-holder');
+const indicator_container = document.querySelector(".indicator-container");
 
-
-const slider = new Slider(allCardsCount, sliderElement);
+const slider = new Slider(allCardsCount, sliderElement,indicator_container);
 
 slider_container.addEventListener("click", function(e) 
 {
-      if(e.target.classList.contains("fa-arrow-right")) {
+      const rightArrow = e.target.classList.contains("fa-arrow-right");
+      const leftArrow = e.target.classList.contains("fa-arrow-left");
+
+      if(rightArrow) 
+      {
             slider.addingToIndex();
       }
-      if(e.target.classList.contains("fa-arrow-left")) {
+      if(leftArrow) 
+      {
             slider.subtractToIndex();
       }
 
-      slider_container.querySelector('.projects-slider-track').style.transform = `translateX(${-slider.slide_arr[slider.index] }px)`;
+      sliderTrack.style.transform = `translateX(${-slider.slide_arr[slider.index] }px)`;
 
       if(slider.screen_size > 720) 
             {
-                  indicator_container.querySelector(".indicator-active").classList.remove("indicator-active");
-                  indicator_container.querySelector(`div[data-indicator='${slider.index || slider.maxSlides -1 }']`).classList.add("indicator-active");
-                  project_slider_track.style.transform = `translateX(${100 * (slider.index * -1)}%)`;
-            }
-            else {
-                  const screen_width = cards_holder.offsetWidth;
-                  project_slider_track.style.transform = `translateX(${screen_width * (currentSlide*-1)}px)`;
+                  slider.indicator.switch_indicator(indicator_container, slider.index);
             }
 })
+document.addEventListener("DOMContentLoaded", () =>
+{
+      slider.indicator.buildIndicator(slider.maxSlides,indicator_container);
+})
 
-const indicator_container = document.querySelector(".indicator-container");
 
 
 
-
-indicator_container.addEventListener("click", function(e){
-      if (!e.target.classList.contains("indicator")) return;
-        indicator_container.querySelector(".indicator-active").classList.remove("indicator-active");
-      e.target.classList.add("indicator-active");
-      currentSlide = e.target.getAttribute("data-indicator");
-      project_slider_track.style.transform = `translateX(${100 * (currentSlide*-1)}%)`;
-    })
 
 
 

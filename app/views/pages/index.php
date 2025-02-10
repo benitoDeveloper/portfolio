@@ -82,16 +82,18 @@
             My Projects
           </h2>
           <div class="indicator-container">
-            <?php for($i=0;$i<$data['slides_count'];$i++) {
+            <!-- <php 
+            for($i=0;$i<$data['slides_count'];$i++) 
+            {
               if($i === 0) {?>
-                  <div data-indicator="<?=$i?>" class="indicator indicator-active"></div>          
-            <?php
+                  <div data-indicator="<=$i?>" class="indicator indicator-active"></div>          
+            <php
               }else {?>
-                <div data-indicator="<?=$i?>" class="indicator"></div>
-            <?php
+                <div data-indicator="<=$i?>" class="indicator"></div>
+            <php
               }
             }
-            ?>
+            ?> -->
           </div>
 
         </div>
