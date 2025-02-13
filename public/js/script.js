@@ -13,44 +13,6 @@ const accordion = document.querySelector(".accordion");
 const cards_holder = document.querySelector(".card-holder");
 
 
-// ---------------------------------->> Slider
-// let currentSlide = 0;
-// const mobile_screen = window.matchMedia("(max-width: 720px)");
-// let maxSlides = mobile_screen.matches ? (all_cards.length-1) : Math.ceil((all_cards.length - 1)/3);
-
-// if(mobile_screen.matches) {
-//   nav.classList.toggle("active");
-// }
-
-// const move_slider = function (e) {
-//   if(!e.target.classList.contains("fa-solid")) return;
-//   maxSlides = mobile_screen.matches ? (all_cards.length-1) : Math.ceil((all_cards.length - 1)/3);
-//   if (e.target.classList.contains("fa-arrow-left")) {
-//     if (currentSlide === 0) {
-//       currentSlide = maxSlides;
-//     } else {
-//       currentSlide--;
-//     }
-//   }
-//   else {
-//     if (currentSlide === maxSlides) {
-//       currentSlide = 0;
-//     } else {
-//       currentSlide++;
-//     }
-//   }
-//   if(!mobile_screen.matches) {
-//     indicator_container.querySelector(".indicator-active").classList.remove("indicator-active");
-//     indicator_container.querySelector(`div[data-indicator='${currentSlide.toString()}']`).classList.add("indicator-active");
-//     project_slider_track.style.transform = `translateX(${100 * (currentSlide*-1)}%)`;
-//   }
-//   else {
-//     const screen_width = cards_holder.offsetWidth;
-//     project_slider_track.style.transform = `translateX(${screen_width * (currentSlide*-1)}px)`;
-//   }
-
-// }
-
 // ---------------------------------- Section Fade in
 const sectionFadeIn = function (entries, observer) {
   const [entry] = entries;
@@ -88,9 +50,10 @@ const lazyImgObserver = new IntersectionObserver(lazyImgFunction, {
 lazyElements.forEach((img) => lazyImgObserver.observe(img));
 
 /// --------------------- smooth Scrolling
-const smoothScrolling = (e) => {
+const smoothScrolling = (e) => 
+{
   e.preventDefault();
-  if (!e.target.classList.contains("nav-link")) return;
+  if (!e.target.classList.contains("smooth")) return;
   const section = document.querySelector(e.target.getAttribute("href"));
   section.scrollIntoView({ behavior: "smooth" });
 };
@@ -106,8 +69,10 @@ const navFade = function(e) {
 };
 
 /// --------------------- Accordion
-accordion.addEventListener("click", function (e) {
-  if (e.target.classList.contains("panel-heading-text") || e.target.classList.contains("fa-solid") || e.target.classList.contains("panel-heading")) {
+accordion.addEventListener("click", function (e) 
+{
+  if (e.target.classList.contains("panel-heading-text") || e.target.classList.contains("fa-solid") || e.target.classList.contains("panel-heading")) 
+  {
     e.target.closest(".panel").classList.toggle("active");
   };
 })
@@ -115,22 +80,15 @@ accordion.addEventListener("click", function (e) {
 /// --------------------- Event Listeners
 nav.addEventListener("mouseover", navFade.bind(0.3));
 nav.addEventListener("mouseout", navFade.bind(1));
-nav.addEventListener("click", smoothScrolling);
-nav.addEventListener("click", function(e){
+document.body.addEventListener("click", smoothScrolling);
+nav.addEventListener("click", function(e)
+{
   if(!e.target.classList.contains("bar")) return;
   nav.querySelector('.hamburger').classList.toggle("active");
   nav.querySelector('.nav-menu').classList.toggle("active");
 })
-// indicator_container.addEventListener("click", function(e){
-//   if (!e.target.classList.contains("indicator")) return;
-//     indicator_container.querySelector(".indicator-active").classList.remove("indicator-active");
-//   e.target.classList.add("indicator-active");
-//   currentSlide = e.target.getAttribute("data-indicator");
-//   project_slider_track.style.transform = `translateX(${100 * (currentSlide*-1)}%)`;
-// })
-// project_slider_container.addEventListener("click", function(e) {
-//   move_slider(e);
-// })
+
+
 
 
 

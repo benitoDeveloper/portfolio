@@ -1,5 +1,5 @@
 <?php
-$menu_arr = ["home", "hola!", "projects", "contact"];
+$menu_arr = ["home", "hola", "projects", "contact"];
 ?>
 <!DOCTYPE html>
     <html lang="en">

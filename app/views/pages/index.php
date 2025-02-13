@@ -1,14 +1,14 @@
 <?php require_once APPROOT . "views/includes/head.php";?>
 
-<header class="header-container">
+<header class="header-container" id="home">
         <nav>
           <div class="navbar container">
             <a href="#"><img class="logo-icon" data-src="img/icon.png" alt="portfolio icon" /></a>
             <ul class="nav-menu">
               <?php foreach($menu_arr as $item){
-                $id = $item === "home"? "top": $item;?>
+              ?>
                 <li class="nav-option">
-                  <a class="nav-link" href="#<?=$id?>"><?=ucwords($item)?></a>
+                  <a class="nav-link smooth" href="#<?=$item?>"><?=ucwords($item)?></a>
                 </li>           
               <?php
               }
@@ -63,14 +63,9 @@
                 <li>Next Steps: Currently updating my portfolio to show the new skills I've learned in the past months, OOP, MVC design pattern, git and github</li>
             </ul>
           </div>
-          <a href="#projects">
-            <div class="card-btn">View my projects</div>
-          </a>
-          <a href="#contact">
-            <div class="card-btn">Contact Me</div>
-          </a>
-          
-
+            <div class="card-btn smooth" href="#projects">View my projects</div>
+            <div class="card-btn smooth" href="#contact">Contact Me</div>
+            
         </div>
         <div class="introduction-image"></div>
       </section>
@@ -82,18 +77,7 @@
             My Projects
           </h2>
           <div class="indicator-container">
-            <!-- <php 
-            for($i=0;$i<$data['slides_count'];$i++) 
-            {
-              if($i === 0) {?>
-                  <div data-indicator="<=$i?>" class="indicator indicator-active"></div>          
-            <php
-              }else {?>
-                <div data-indicator="<=$i?>" class="indicator"></div>
-            <php
-              }
-            }
-            ?> -->
+
           </div>
 
         </div>
@@ -124,7 +108,7 @@ foreach ($data['projects'] as $index => $project)
                     ?>
                         <li><?= ucwords($language) ?></li>
                     <?php
-                    } // Closing bracket for the inner foreach loop
+                    } 
                     ?>
                 </ul>
                 <a href="<?= $project->project_url ?>" target="_blank" class="card-btn card-btn-visit">Visit</a>
@@ -133,8 +117,7 @@ foreach ($data['projects'] as $index => $project)
         </div>
     </div>
 <?php
-// var_dump($project->project_name);
-} // Closing bracket for the outer foreach loop
+} 
 ?>
             </div>
           </div>
@@ -210,9 +193,6 @@ foreach ($data['projects'] as $index => $project)
 
           </div>
         </div>
-        <!-- <div class="container">
-          <h2 class="get-inTouch-title text-title">Get In Touch</h2>
-        </div> -->
       </section>
 </main>
 

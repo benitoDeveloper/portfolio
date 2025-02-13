@@ -17,9 +17,12 @@ class Database
                   PDO::ATTR_PERSISTENT=>true,
                   PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
             );
-            try{
+            try
+            {
                   $this->db_conn = new PDO($dsn, $this->db_user, $this->db_password, $options);
-            }catch(PDOException $e) {
+            }
+            catch(PDOException $e) 
+            {
                   $this->error = "there was an error: - " . $e->getMessage();
                   echo $this->error;
             }
