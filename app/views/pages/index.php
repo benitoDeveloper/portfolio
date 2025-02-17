@@ -1,4 +1,5 @@
-<?php require_once APPROOT . "views/includes/head.php";?>
+<?php require_once APPROOT . "views/includes/head.php";
+?>
 
 <header class="header-container" id="home">
         <nav>
@@ -24,10 +25,11 @@
         </nav>
       <main class="background-image-container">
         <div class="background-image">
-        </div>
-        <h1 class="title-heading">Benito Beceiro</h1>
+          <h1 class="title-heading">Benito Beceiro</h1>
           <p class="title-subHeading">A Web Developer</p>
           <p class="title-subHeading">building functional and beautiful websites</p>
+        </div>
+
       </main>
 </header>
 <main class="main-section" >
@@ -94,7 +96,7 @@ foreach ($data['projects'] as $index => $project)
         <div data-slide=<?= $index + 1 ?> class="card">
             <img 
             src=
-            "<?=URLROOT . 'public/' . $project->lr_image?>" data-src="<?=URLROOT . 'public/' . $project->hr_image?>" 
+            "<?=URLROOT . 'public/img' . $project->lr_image . '.jpg'?>" data-src="<?=URLROOT . 'public/img' . $project->hr_image . '.jpg'?>" 
             height="172" alt="<?=$project->alt_text?>" 
             class="card-image" 
             />
@@ -111,8 +113,8 @@ foreach ($data['projects'] as $index => $project)
                     } 
                     ?>
                 </ul>
-                <a href="<?= $project->project_url ?>" target="_blank" class="card-btn card-btn-visit">Visit</a>
-                <a class="card-btn card-btn-code" target="_blank" href="<?= $project->github_url ?>">Code</a>
+                <a class="card-btn card-btn-visit" target="_blank" href="<?= $project->project_url?>">Visit</a>
+                <a class="card-btn card-btn-code" target="_blank" href="<?= $project->github_url?>">Code</a>
             </div>
         </div>
     </div>
@@ -196,5 +198,5 @@ foreach ($data['projects'] as $index => $project)
       </section>
 </main>
 
-<?php require_once(APPROOT . "views/includes/footer.php");
-?>
+<?php require_once(APPROOT . "views/includes/footer.php");?>
+
