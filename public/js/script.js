@@ -52,8 +52,8 @@ lazyElements.forEach((img) => lazyImgObserver.observe(img));
 /// --------------------- smooth Scrolling
 const smoothScrolling = (e) => 
 {
-  e.preventDefault();
   if (!e.target.classList.contains("smooth")) return;
+  e.preventDefault();
   const section = document.querySelector(e.target.getAttribute("href"));
   section.scrollIntoView({ behavior: "smooth" });
 };

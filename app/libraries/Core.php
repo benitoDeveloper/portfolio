@@ -7,7 +7,7 @@ class Core
 
       public function __construct()
       {
-            $url = empty($this->get_url())? ['Pages'] : $this->get_url();
+            $url = empty($this->get_url())? ['projects'] : $this->get_url();
 
             if(file_exists(APPROOT . "controllers/" . $url[0] . ".php"))
             {
@@ -23,7 +23,6 @@ class Core
                   unset($url[1]);
             }
             $this->params = empty($url)? [] : $url;
-
             call_user_func_array([$this->current_controller, $this->current_method], $this->params);
 
       }

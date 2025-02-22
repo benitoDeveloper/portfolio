@@ -14,5 +14,10 @@ class Pages extends Controller
             ];
             $this->view('pages/index',$data);
       }
+      public function project()
+      {
+            // redirect('projects/' . $project);
+            echo "hola";
+      }
 }
 ?>
