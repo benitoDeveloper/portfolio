@@ -106,6 +106,7 @@ nav
             align-items: center;
             justify-content: center;
             transition: ease-in-out 0.8s;
+            margin-bottom: 0;
       }
       .nav-option
       {
@@ -114,6 +115,7 @@ nav
             padding: 8px;
             opacity: 1;
             font-size: 16px;
+            margin-bottom: 0;
       }
       .nav-link
       {
@@ -138,7 +140,7 @@ nav
             .bar 
             {
                   width: 30px;
-                  height: 5px;
+                  height: 3px;
                   background: $white-color;
                   display: block;
                   margin: 5px 0;
@@ -343,11 +345,11 @@ nav
             }
             .slider-btn-left 
             {
-                  left: 14%;
+                  left: 14vw;
             }
             .slider-btn-right 
             {
-                  right: 14%;
+                  right: 14vw;
             }
       }
 
@@ -479,27 +481,32 @@ footer
       }
 }
 
-
 /* ------------------ >>> Responsive  */
 @media screen and (max-width: 1200px)
 {
-      .slider-btn 
+      .projects
       {
-        font-size: 45px;
+            .projects-slider-container
+            {
+                  .slider-btn 
+                  {
+                    font-size: 45px;
+                  }
+                  .fa-solid, .fas 
+                  { 
+                    opacity: 0.5;
+                  }
+                  .slider-btn-left 
+                  {
+                    left: 3%;
+                  }
+                  .slider-btn-right 
+                  {
+                    right: 3%;
+                  }
+            }
       }
-      .fa-solid, .fas 
-      { 
-        opacity: 0.5;
-      }
-      .slider-btn-left 
-      {
-        left: 3%;
-      }
-      .slider-btn-right 
-      {
-        right: 3%;
-      }
-} 
+}   
 @media screen and (max-width: 960px)
 {
       .container 
@@ -509,98 +516,132 @@ footer
       .introduction-section 
       {
         flex-direction: column;
+        .introduction-image 
+        {
+          flex: unset;
+          width: 85%;
+          aspect-ratio: 1/1;
+          margin: auto;
+        }
       }
-      .introduction-image 
+      /* -----------  >>>>> accordion */
+      .projects
       {
-        flex: unset;
-        width: 85%;
-        aspect-ratio: 1/1;
-        margin: auto;
+
+            .projects-slider-container
+            {
+                  .projects-slider-track-holder 
+                  {
+                    max-width: 740px;
+                  }
+                  .slider-btn-left 
+                  {
+                        left: 5vw
+                  }
+                  .slider-btn-right 
+                  {
+                        right: 5vw;
+                  }
+            }
       }
-      .projects-slider-track-holder 
+      .get-inTouch
       {
-        max-width: 740px;
+            .panel 
+            {
+              width: 100%;
+            }
       }
-/* -----------  >>>>> accordion */
-      .panel 
-      {
-        width: 100%;
-      }
-}
+}  
 @media screen and (max-width: 720px)
 {
-/* -----------  >>>>> hamburger menu */
-      .navbar.active .hamburger 
+      /* -----------  >>>>> hamburger menu */
+      .navbar
       {
-        display: block;
+            .hamburger 
+            {
+              display: block;
+              &.active .bar:nth-child(1) 
+              {
+                transform: translateY(4px) rotate(-45deg);
+              }
+              &.active .bar:nth-child(2) 
+              {
+                opacity: 0;
+              }
+              &.active .bar:nth-child(3) 
+              {
+                transform: translateY(-10.5px) rotate(45deg);
+              }
+            }
+            .nav-menu 
+            {
+              position: absolute;
+              top: -70vh;
+              right: 0;
+              flex-direction: column;
+              width: 100vw;
+              align-items: center;
+              justify-content: center;
+              opacity: 0.8;
+              padding: 65px 0 20px;
+              &.active 
+              {
+                background-color: $primary-color;
+                top: 0;
+              }        
+            }
       }
-      .hamburger.active .bar:nth-child(1) 
-      {
-        transform: translateY(9px) rotate(-45deg);
-      }
-      .hamburger.active .bar:nth-child(2) 
-      {
-        opacity: 0;
-      }
-      .hamburger.active .bar:nth-child(3) 
-      {
-        transform: translateY(-10.5px) rotate(45deg);
-      }
-    
-      nav .nav-menu 
-      {
-        position: absolute;
-        top: -225px;
-        right: 0;
-        flex-direction: column;
-        width: 100vw;
-        align-items: center;
-        justify-content: center;
-        opacity: 0.8;
-        padding: 65px 0 20px;
-      }
-      nav .nav-menu.active 
-      {
-        background-color: $primary-color;
-        top: 0;
-      }
-/* -----------  >>>>> general classes */
+
+      /* -----------  >>>>> general classes */
       .container 
       {
-        max-width: 95%;
+        max-width: 90%;
       }
       .dots 
       {
         margin: 100px auto;
       }
-      .indicator-container 
+      .projects 
       {
-        display: none;
-      }
-      .projects-slider-container 
-      {
-        width: 99%;
-        margin: auto;
-      }
-      .projects-slider-track-holder 
-      {
-        max-width: 100%;
+            .indicator-container 
+            {
+              display: none;
+            }
+            .projects-slider-container 
+            {
+              width: 99%;
+              margin: auto;
+              .projects-slider-track-holder 
+              {
+                max-width: 100%;
+              }
+            }
+            .card-holder 
+            {
+              width: 100vw;
+            }
+            .title-heading 
+            {
+              font-size: 3rem;
+              line-height: 1.25;
+            }
+            .title-subHeading 
+            {
+                font-size: 1rem;
+            }
       }
       .introduction-section 
       {
-        text-align: center;
-      }
-      .introduction-image 
-      {
-        width: 100%;
+        text-align: left;
+        .introduction-image 
+        {
+          width: 100%;
+        }
       }
       .contact-details-container 
       {
         flex-direction: column;
         gap: 2rem;
       }
-      .card-holder 
-      {
-        width: 100vw;
-      }
 }
+    
