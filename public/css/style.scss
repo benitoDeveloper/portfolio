@@ -7,6 +7,11 @@ $light-grey: #ced4da; // light grey
 $border-color: #6c757d; // grey
 $white-color: #fff; // white
 
+@mixin font($fontSize,$lineHeight)
+{
+      font-size: $fontSize;
+      line-height: $lineHeight;
+}
 * 
 {
       padding: 0;
@@ -27,14 +32,12 @@ ul
 }
 h4 
 {
-      font-size: 1.5rem;
-      line-height: 1.4;
+      @include font(1.5rem,1.4);
       margin-bottom: 0.75rem;
  }
 p,li 
 {
-      font-size: 1rem;
-      line-height: 1.5;
+      @include font(1rem,1.5);
       margin-bottom: 0.75rem;
 }
 .header-container 
@@ -55,10 +58,9 @@ p,li
 }
 .text-title 
 {
-      font-size: 2rem;
-      font-weight: 600;
-      line-height: 1.3;
+      @include font(2rem,1.3);
       margin-bottom: 1rem;
+      font-weight: 600;
       text-align: center;;
 }
 .introduction-title.text-title 
@@ -169,20 +171,18 @@ nav
             text-align: center;
             .title-heading 
             {
-                  font-family: "sacramento", cursive;
-                  font-size: 3.5rem;
-                  color: $white-color;
-                  line-height: 1.2;
+                  @include font(3.5rem,1.2);
                   margin-bottom: 0.5em;
+                  font-family: "sacramento", cursive;
+                  color: $white-color;
             }
             .title-subHeading 
             {
+                  @include font(1.5rem,1.4);
+                  margin-bottom: 1.2em;
                   font-family: "Montserrat", sans-serif;
                   font-weight: 400;
                   color: $white-color;
-                  font-size: 1.5rem;
-                  margin-bottom: 1.2em;
-                  line-height: 1.4;
             }
       }
 }
@@ -286,9 +286,8 @@ nav
                         }
                         .card-title 
                         {
+                              @include font(20px,1.5);
                               margin-bottom: 12px;
-                              font-size: 20px;
-                              line-height: 1.5;
                               font-weight: 500;
                         }
                         .card-subHeading 
@@ -304,16 +303,15 @@ nav
                         }
                         .card-btn 
                         {
+                              @include font(16px,1.5);
+                              margin-bottom: 8px;
                               display: block;
                               border-radius: 5px;
                               background-color: $primary-color;
                               color: $white-color;
                               padding: 6px 12px;
-                              line-height: 1.5;
                               width: 100%;
                               border: 1px solid $border-color;
-                              margin-bottom: 8px;
-                              font-size: 16px;
                               transition: background-color 0.25s ease-in, color 0.25s ease-in;
                               text-decoration: none;
                               text-align: center;
@@ -622,8 +620,7 @@ footer
             }
             .title-heading 
             {
-              font-size: 3rem;
-              line-height: 1.25;
+                  @include font(3rem,1.25);
             }
             .title-subHeading 
             {
