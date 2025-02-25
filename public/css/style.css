@@ -47,9 +47,9 @@ p, li {
 
 .text-title {
   font-size: 2rem;
-  font-weight: 600;
   line-height: 1.3;
   margin-bottom: 1rem;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -90,9 +90,9 @@ nav img {
 }
 nav .nav-menu {
   display: flex;
+  justify-content: center;
   width: 30%;
   align-items: center;
-  justify-content: center;
   transition: ease-in-out 0.8s;
   margin-bottom: 0;
 }
@@ -149,20 +149,20 @@ nav .hamburger .bar {
   justify-content: center;
   text-align: center;
 }
-.background-image-container .background-image .title-heading {
-  font-family: "sacramento", cursive;
+.background-image-container .title-heading {
   font-size: 3.5rem;
-  color: #fff;
   line-height: 1.2;
   margin-bottom: 0.5em;
+  font-family: "sacramento", cursive;
+  color: #fff;
 }
-.background-image-container .background-image .title-subHeading {
+.background-image-container .title-subHeading {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-bottom: 1.2em;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   color: #fff;
-  font-size: 1.5rem;
-  margin-bottom: 1.2em;
-  line-height: 1.4;
 }
 
 /* ------------------ >>> Introduction  */
@@ -173,7 +173,7 @@ nav .hamburger .bar {
 .introduction-section .introduction-text {
   flex: 1;
 }
-.introduction-section .introduction-text .introduction-text-text p {
+.introduction-section .introduction-text-text p {
   line-height: 1.4;
   margin-bottom: 16px;
 }
@@ -195,16 +195,16 @@ nav .hamburger .bar {
   gap: 30px;
   margin-bottom: 32px;
 }
-.projects .indicator-container .indicator {
+.projects .indicator {
   width: 20px;
   height: 5px;
   background-color: #205375;
   opacity: 0.5;
 }
-.projects .indicator-container .indicator:hover {
+.projects .indicator:hover {
   cursor: pointer;
 }
-.projects .indicator-container .indicator.indicator-active {
+.projects .indicator.indicator-active {
   opacity: 1;
 }
 .projects .projects-slider-container {
@@ -212,7 +212,7 @@ nav .hamburger .bar {
   height: 500px;
   position: relative;
 }
-.projects .projects-slider-container .projects-slider-track-holder {
+.projects .projects-slider-track-holder {
   max-width: 1110px;
   overflow: hidden;
   position: absolute;
@@ -220,7 +220,7 @@ nav .hamburger .bar {
   transform: translateX(-50%);
   height: 475px;
 }
-.projects .projects-slider-container .projects-slider-track-holder .projects-slider-track {
+.projects .projects-slider-track {
   width: 100%;
   height: 475px;
   margin: auto;
@@ -229,7 +229,7 @@ nav .hamburger .bar {
   align-items: center;
   transition: 1.25s;
 }
-.projects .projects-slider-container .projects-slider-track-holder .card {
+.projects .card {
   min-width: 340px;
   height: 456px;
   margin: 0 15px;
@@ -238,7 +238,7 @@ nav .hamburger .bar {
   flex-direction: column;
   border-radius: 5px;
 }
-.projects .projects-slider-container .projects-slider-track-holder .card .card-image {
+.projects .card-image {
   width: 100%;
   max-height: 144px;
   -o-object-fit: cover;
@@ -246,45 +246,45 @@ nav .hamburger .bar {
   flex: 1;
   border-radius: 5px 5px 0 0;
 }
-.projects .projects-slider-container .projects-slider-track-holder .card .card-body {
+.projects .card-body {
   padding: 20px;
 }
-.projects .projects-slider-container .projects-slider-track-holder .card .card-title {
-  margin-bottom: 12px;
+.projects .card-title {
   font-size: 20px;
   line-height: 1.5;
+  margin-bottom: 12px;
   font-weight: 500;
 }
-.projects .projects-slider-container .projects-slider-track-holder .card .card-subHeading {
+.projects .card-subHeading {
   margin-bottom: 16px;
   line-height: 1.5;
 }
-.projects .projects-slider-container .projects-slider-track-holder .card .card-languages li {
+.projects .card-languages li {
   list-style: none;
   line-height: 0.5;
   margin-bottom: 16px;
 }
-.projects .projects-slider-container .projects-slider-track-holder .card .card-btn {
+.projects .card-btn {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 8px;
   display: block;
   border-radius: 5px;
   background-color: #353a40;
   color: #fff;
   padding: 6px 12px;
-  line-height: 1.5;
   width: 100%;
   border: 1px solid #6c757d;
-  margin-bottom: 8px;
-  font-size: 16px;
   transition: background-color 0.25s ease-in, color 0.25s ease-in;
   text-decoration: none;
   text-align: center;
 }
-.projects .projects-slider-container .projects-slider-track-holder .card .card-btn:hover {
+.projects .card-btn:hover {
   background-color: transparent;
-  color: #fff;
+  color: #353a40;
   cursor: pointer;
 }
-.projects .projects-slider-container .slider-btn {
+.projects .slider-btn {
   position: absolute;
   background-color: transparent;
   font-size: 55px;
@@ -294,15 +294,15 @@ nav .hamburger .bar {
   color: #353a40;
   transition: opacity 0.15s ease-in, scale 0.15s ease-in;
 }
-.projects .projects-slider-container .slider-btn .fa-solid:hover {
+.projects .slider-btn .fa-solid:hover {
   opacity: 0.7;
   transform: scale(0.96);
   cursor: pointer;
 }
-.projects .projects-slider-container .slider-btn-left {
+.projects .slider-btn-left {
   left: 14vw;
 }
-.projects .projects-slider-container .slider-btn-right {
+.projects .slider-btn-right {
   right: 14vw;
 }
 
@@ -320,58 +320,6 @@ nav .hamburger .bar {
   border-radius: 5px;
   padding: 20px 35px;
 }
-.get-inTouch .panel form {
-  background-color: #353a40;
-  padding: 15px;
-}
-.get-inTouch .panel form .input-group {
-  margin-bottom: 15px;
-}
-.get-inTouch .panel form .input-group label {
-  display: flex;
-}
-.get-inTouch .panel form .input-group .fa-solid,
-.get-inTouch .panel form .input-group input {
-  padding: 0.5rem 1rem;
-}
-.get-inTouch .panel form .input-group .fa-solid {
-  background-color: #e9ecef;
-  border: 1px solid #ced4da;
-  border-radius: 5px 0 0 5px;
-  height: 100%;
-}
-.get-inTouch .panel form .input-group input,
-.get-inTouch .panel form .input-group textarea {
-  width: 100%;
-  border: 1px solid #ced4da;
-  border-left: none;
-  border-radius: 0 5px 5px 0;
-  padding: 0.5rem 1rem;
-}
-.get-inTouch .panel form .input-group .fa-user:before,
-.get-inTouch .panel form .input-group .fa-envelope:before,
-.get-inTouch .panel form .input-group .fa-pencil:before {
-  color: #495057;
-}
-.get-inTouch .panel form .input-group .fa-pencil:before {
-  vertical-align: -100%;
-}
-.get-inTouch .panel .panel-heading {
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-}
-.get-inTouch .panel .panel-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: 0.4s;
-  border-radius: 5px;
-  background-color: #353a40;
-  color: #fff;
-}
-.get-inTouch .panel .fa-sharp {
-  transition: 0.4s;
-}
 .get-inTouch .panel.active .panel-content {
   max-height: clamp(0px, 100vh, 500px);
   margin-top: 25px;
@@ -379,12 +327,64 @@ nav .hamburger .bar {
 .get-inTouch .panel.active .fa-sharp {
   transform: rotate(180deg);
 }
+.get-inTouch .panel-heading {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+.get-inTouch .panel-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.4s;
+  border-radius: 5px;
+  background-color: #353a40;
+  color: #fff;
+}
+.get-inTouch .fa-sharp {
+  transition: 0.4s;
+}
+.get-inTouch form {
+  background-color: #353a40;
+  padding: 15px;
+}
+.get-inTouch form .input-group {
+  margin-bottom: 15px;
+}
+.get-inTouch form label {
+  display: flex;
+}
+.get-inTouch form .fa-solid,
+.get-inTouch form input {
+  padding: 0.5rem 1rem;
+}
+.get-inTouch form .fa-solid {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 5px 0 0 5px;
+  height: 100%;
+}
+.get-inTouch form input,
+.get-inTouch form textarea {
+  width: 100%;
+  border: 1px solid #ced4da;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  padding: 0.5rem 1rem;
+}
+.get-inTouch form .fa-user:before,
+.get-inTouch form .fa-envelope:before,
+.get-inTouch form .fa-pencil:before {
+  color: #495057;
+}
+.get-inTouch form .fa-pencil:before {
+  vertical-align: -100%;
+}
 .get-inTouch .contact-details-container {
   display: flex;
   justify-content: space-evenly;
   padding: 15px;
 }
-.get-inTouch .contact-details-container .contact-details {
+.get-inTouch .contact-details {
   text-align: center;
   line-height: 2;
 }
