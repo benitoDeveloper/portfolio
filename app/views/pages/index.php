@@ -2,20 +2,20 @@
 ?>
 
 <header class="header-container" id="home">
-        <nav>
-          <div class="navbar container">
-            <a href="#"><img class="logo-icon" data-src="img/icon.png" alt="portfolio icon" /></a>
-            <ul class="nav-menu">
+        <nav class="navbar">
+          <div class="navbar__container container">
+            <a href="#"><img class="navbar__logo" data-src="img/icon.png" alt="portfolio icon" /></a>
+            <ul class="navbar__menu">
               <?php foreach($menu_arr as $item){
               ?>
-                <li class="nav-option">
-                  <a class="nav-link smooth" href="#<?=$item?>"><?=ucwords($item)?></a>
+                <li class="navbar__option">
+                  <a class="navbar__link smooth" href="#<?=$item?>"><?=ucwords($item)?></a>
                 </li>           
               <?php
               }
               ?>
             </ul>
-            <button class="hamburger">
+            <button class="navbar__burger">
               <div class="bar"></div>
               <div class="bar"></div>
               <div class="bar"></div>
@@ -23,21 +23,21 @@
           </div>
 
         </nav>
-      <main class="background-image-container">
-        <div class="background-image">
-          <h1 class="title-heading">Benito Beceiro</h1>
-          <p class="title-subHeading">A Web Developer</p>
-          <p class="title-subHeading">building functional and beautiful websites</p>
+      <main class="background">
+        <div class="background__image">
+          <h1 class="background__heading">Benito Beceiro</h1>
+          <p class="background__subheading">A Web Developer</p>
+          <p class="background__subheading">building functional and beautiful websites</p>
         </div>
 
       </main>
 </header>
 <main class="main-section" >
       <div id="hola" class="dots"></div>
-      <section  class="introduction-section container">
-        <div class="introduction-text ">
-          <h2 class="introduction-title text-title">Hola!</h3>
-          <div class="introduction-text-text">
+      <section  class="introduction container">
+        <div class="introduction__text-box ">
+          <h2 class="introduction__title title">Hola!</h3>
+          <div class="introduction__text">
             <p>
                 I'm Benito, a passionate Web Developer who likes solving problems and building functional, beautiful websites
             <p>
@@ -69,41 +69,41 @@
             <div class="card-btn smooth" href="#contact">Contact Me</div>
             
         </div>
-        <div class="introduction-image"></div>
+        <div class="introduction__img"></div>
       </section>
       <div id="projects" class="dots"></div>
       <section  class="projects">
 
         <div class="projects-top-section container">
-          <h2 class="projects-title text-title">
+          <h2 class="projects__title title">
             My Projects
           </h2>
-          <div class="indicator-container">
+          <div class="slider__indicator">
 
           </div>
 
         </div>
-        <div class="projects-slider-container">
-          <div class="projects-slider-track-holder">
-            <div class="projects-slider-track">
+        <div class="slider">
+          <div class="slider__track-holder">
+            <div class="slider__track">
 
 <?php
 foreach ($data['projects'] as $index => $project) 
 {
     $languages = explode(",", $project->languages);
 ?>
-    <div class="card-holder">
-        <div data-slide=<?= $index + 1 ?> class="card">
+    <div class="slider__card-holder">
+        <div data-slide=<?= $index + 1 ?> class="slider__card">
             <img 
             src=
             "<?=URLROOT . 'public/img/' . $project->lr_image . '.jpg'?>" data-src="<?=URLROOT . 'public/img/' . $project->hr_image . '.jpg'?>" 
             height="172" alt="<?=$project->alt_text?>" 
-            class="card-image" 
+            class="slider__card-image" 
             />
-            <div class="card-body">
-                <h2 class="card-title"><?= ucwords($project->project_name) ?></h2>
-                <p class="card-subHeading">Languages used:</p>
-                <ul class="card-languages">
+            <div class="slider__card-body">
+                <h2 class="slider__card-title"><?= ucwords($project->project_name) ?></h2>
+                <p class="slider__card-subHeading">Languages used:</p>
+                <ul class="slider__card-languages">
                     <?php
                     foreach ($languages as $language) 
                     {
@@ -113,8 +113,8 @@ foreach ($data['projects'] as $index => $project)
                     } 
                     ?>
                 </ul>
-                <a class="card-btn card-btn-visit" target="_blank" href="<?=$project->project_url?>">Visit</a>
-                <a class="card-btn card-btn-code" target="_blank" href="<?= $project->github_url?>">Code</a>
+                <a class="slider__card-btn card-btn-visit" target="_blank" href="<?=$project->project_url?>">Visit</a>
+                <a class="slider__card-btn card-btn-code" target="_blank" href="<?= $project->github_url?>">Code</a>
             </div>
         </div>
     </div>
@@ -124,10 +124,10 @@ foreach ($data['projects'] as $index => $project)
             </div>
           </div>
 
-          <button title="slider button left" class="slider-btn slider-btn-left">
+          <button title="slider button left" class="slider__btn slider__btn-left">
             <i class="fa-solid fa-arrow-left"></i>
           </button>
-          <button title="slider button right" class="slider-btn slider-btn-right">
+          <button title="slider button right" class="slider__btn slider__btn-right">
             <i class="fa-solid fa-arrow-right"></i>
           </button>
 
@@ -139,7 +139,7 @@ foreach ($data['projects'] as $index => $project)
 
       <section class="get-inTouch">
         <div class="container">
-          <h2 class="text-title">Contact Me</h2>
+          <h2 class="title">Contact Me</h2>
 
           <div class="accordion">
 

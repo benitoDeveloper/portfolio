@@ -8,10 +8,10 @@ class Slider_indicator
             {
                   const indicator = document.createElement('div');
                   indicator.setAttribute('data-indicator', i);
-                  indicator.classList.add('indicator');
+                  indicator.classList.add('slider__indicator-item');
                   if(i === 0)
                   {
-                        indicator.classList.add('indicator-active');
+                        indicator.classList.add('slider__indicator--active');
                   }
                   indicator_element.appendChild(indicator);
 
@@ -19,16 +19,16 @@ class Slider_indicator
       }
       switch_indicator(indicator_container, index)
       {
-            const currentIndicator = indicator_container.querySelector(".indicator-active");
+            const currentIndicator = indicator_container.querySelector(".slider__indicator--active");
             if(currentIndicator)
             {
-                  currentIndicator.classList.remove('indicator-active')
+                  currentIndicator.classList.remove('slider__indicator--active')
             }
 
             const newIndicator = indicator_container.querySelector(`div[data-indicator='${index}']`);
             if(newIndicator)
             {
-                  newIndicator.classList.add("indicator-active");
+                  newIndicator.classList.add("slider__indicator--active");
             }
       }
 }
@@ -110,12 +110,12 @@ class Slider
       }
 }
 
-const slider_container = document.querySelector(".projects-slider-container");
-const sliderTrack = slider_container.querySelector('.projects-slider-track');
-const sliderElement = slider_container.querySelector('.projects-slider-track-holder');
-const allCards = Array.from(slider_container.querySelectorAll(".card-holder"));
+const slider_container = document.querySelector(".slider");
+const sliderTrack = slider_container.querySelector('.slider__track');
+const sliderElement = slider_container.querySelector('.slider__track-holder');
+const allCards = Array.from(slider_container.querySelectorAll(".slider__card-holder"));
 const allCardsCount = allCards.length;
-const indicator_container = document.querySelector(".indicator-container");
+const indicator_container = document.querySelector(".slider__indicator");
 
 const slider = new Slider(allCardsCount, sliderElement,indicator_container);
 

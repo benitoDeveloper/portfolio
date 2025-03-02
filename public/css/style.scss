@@ -56,17 +56,14 @@ p,li
       width: 150px;
       margin: 200px auto;
 }
-.text-title 
+.title 
 {
       @include font(2rem,1.3);
       margin-bottom: 1rem;
       font-weight: 600;
       text-align: center;;
 }
-.introduction-title.text-title 
-{
-      text-align: left;
-}
+
 section 
 {
       transition: transform 1s, opacity 1s;
@@ -78,14 +75,14 @@ section
 }
 
 /* ------------------ >>> Navbar  */
-nav
+.navbar
 {
       background-color: $primary-color;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
-      .navbar 
+      .navbar__container 
       {
             display: flex;
             justify-content: space-between;
@@ -95,13 +92,13 @@ nav
       {
             padding: 0.5rem;
       }
-      img
+      &__logo
       {
             width: 40px;
             height: 40px;
             object-fit: cover;  
       }
-      .nav-menu
+      &__menu
       {
             display: flex;
             justify-content: center;
@@ -110,7 +107,7 @@ nav
             transition: ease-in-out 0.8s;
             margin-bottom: 0;
       }
-      .nav-option
+      &__option
       {
             list-style: none;
             font-family: "Noto Sans", sans-serif;
@@ -119,7 +116,7 @@ nav
             font-size: 16px;
             margin-bottom: 0;
       }
-      .nav-link
+      &__link
       {
             text-decoration: none;
             color: $light-grey ;
@@ -130,7 +127,7 @@ nav
             scale: 0.96;
             cursor: pointer;
       }
-      .hamburger 
+      &__burger 
       {
             display: none;
             width: fit-content;
@@ -154,11 +151,11 @@ nav
 }
 
 /* ------------------ >>> Background-img  */
-.background-image-container 
+.background 
 {
       height: 100vh;
       width: 100vw;
-      .background-image 
+      &__image 
       {
             background-image: url(../img/bg8.jpg);
             background-position: top center;
@@ -170,14 +167,14 @@ nav
             justify-content: center;
             text-align: center;
       }
-      .title-heading 
+      &__heading 
       {
             @include font(3.5rem,1.2);
             margin-bottom: 0.5em;
             font-family: "sacramento", cursive;
             color: $white-color;
       }
-      .title-subHeading 
+      &__subheading 
       {
             @include font(1.5rem,1.4);
             margin-bottom: 1.2em;
@@ -188,20 +185,24 @@ nav
 }
 
 /* ------------------ >>> Introduction  */
-.introduction-section 
+.introduction 
 {
       display: flex;
       gap: 2rem;
-      .introduction-text 
+      &__text-box 
       {
             flex: 1;
       }
-      .introduction-text-text p 
+      .introduction__title
+      {
+            text-align: left;
+      }
+      &__text p 
       {
             line-height: 1.4;
             margin-bottom: 16px;
       }
-      .introduction-image 
+      &__img 
       {
             background-image: url(../img/chilling.jpg);
             background-position: center center;
@@ -211,43 +212,44 @@ nav
       }
 }
 
+
 /* ------------------ >>> Projects Slider  */
 .projects
 {
-      .projects-title 
+      &__title 
       {
             text-align: center;
       }
-      .indicator-container 
+     
+}
+.slider 
+{
+      width: 100%;
+      height: 500px;
+      position: relative;
+      &__indicator 
       {
             display: flex;
             justify-content: center;
             gap: 30px;
             margin-bottom: 32px;
-      }
-      .indicator 
-      {
-            width: 20px;
-            height: 5px;
-            background-color: $navyBlue;
-            opacity: 0.5;
-            &:hover 
+            &-item 
+            {
+                  width: 20px;
+                  height: 5px;
+                  background-color: $navyBlue;
+                  opacity: 0.5;
+            }
+            &-item:hover 
             {
                   cursor: pointer;
             }
-            &.indicator-active 
+            &--active 
             {
                   opacity: 1;
             }
       }
-      .projects-slider-container 
-      {
-            width: 100%;
-            height: 500px;
-            position: relative;
-           
-      }
-      .projects-slider-track-holder 
+      &__track-holder 
       {
             max-width: 1110px;
             overflow: hidden;
@@ -256,7 +258,7 @@ nav
             transform: translateX(-50%);
             height: 475px;
       }
-      .projects-slider-track 
+      &__track 
       {
             width: 100%;
             height: 475px;
@@ -266,7 +268,7 @@ nav
             align-items: center;
             transition: 1.25s;
       }
-      .card 
+      &__card 
       {
             min-width: 340px;
             height: 456px;
@@ -276,7 +278,7 @@ nav
             flex-direction: column;
             border-radius: 5px;
       }
-      .card-image 
+      &__card-image 
       {
             width: 100%;
             max-height: 144px;
@@ -284,28 +286,28 @@ nav
             flex: 1;
             border-radius: 5px 5px 0 0;
       }
-      .card-body 
+      &__card-body 
       {
             padding: 20px;
       }
-      .card-title 
+      &__card-title 
       {
             @include font(20px,1.5);
             margin-bottom: 12px;
             font-weight: 500;
       }
-      .card-subHeading 
+      &__card-subHeading 
       {
             margin-bottom: 16px;
             line-height: 1.5;
       }
-      .card-languages li 
+      &__card-languages li 
       {
             list-style: none;
             line-height: 0.5;
             margin-bottom: 16px;
       }
-      .card-btn 
+      &__card-btn 
       {
             @include font(16px,1.5);
             margin-bottom: 8px;
@@ -319,14 +321,14 @@ nav
             transition: background-color 0.25s ease-in, color 0.25s ease-in;
             text-decoration: none;
             text-align: center;
+            &:hover 
+            {
+                  background-color: transparent;
+                  color: $primary-color;
+                  cursor: pointer;
+            }      
       }
-      .card-btn:hover 
-      {
-            background-color: transparent;
-            color: $primary-color;
-            cursor: pointer;
-      }
-      .slider-btn 
+      &__btn 
       {
             position: absolute;
             background-color: transparent;
@@ -343,11 +345,11 @@ nav
                   cursor: pointer;
             }
       }
-      .slider-btn-left 
+      &__btn-left 
       {
             left: 14vw;
       }
-      .slider-btn-right 
+      &__btn-right 
       {
             right: 14vw;
       }
@@ -510,10 +512,10 @@ footer
       {
         max-width: 720px;
       }
-      .introduction-section 
+      .introduction 
       {
         flex-direction: column;
-        .introduction-image 
+        &__img 
         {
           flex: unset;
           width: 85%;
@@ -554,7 +556,7 @@ footer
       /* -----------  >>>>> hamburger menu */
       .navbar
       {
-            .hamburger 
+            &__burger
             {
               display: block;
               &.active .bar:nth-child(1) 
@@ -570,7 +572,7 @@ footer
                 transform: translateY(-10.5px) rotate(45deg);
               }
             }
-            .nav-menu 
+            .navbar__menu 
             {
               position: absolute;
               top: -70vh;
@@ -626,10 +628,10 @@ footer
                 font-size: 1rem;
             }
       }
-      .introduction-section 
+      .introduction 
       {
         text-align: left;
-        .introduction-image 
+        &__img
         {
           width: 100%;
         }

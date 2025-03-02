@@ -1,8 +1,8 @@
 "use strict";
 
 // --------------------- Sections ---------------------//
-const nav = document.querySelector(".navbar");
-const link = nav.querySelectorAll(".nav-link");
+const nav = document.querySelector(".navbar__container");
+const link = nav.querySelectorAll(".navbar__link");
 const allSections = document.querySelectorAll("section");
 const all_cards = Array.from(document.querySelectorAll(".card"));
 const lazyElements = document.querySelectorAll("img");
@@ -61,8 +61,8 @@ const smoothScrolling = (e) =>
 /// --------------------- nav Fade
 const navFade = function(e) {
   e.preventDefault();
-  if (!e.target.classList.contains("nav-link")) return;
-  const links = nav.querySelectorAll(".nav-link, .logo-icon");
+  if (!e.target.classList.contains("navbar__link")) return;
+  const links = nav.querySelectorAll(".navbar__link, .navbar__logo");
   links.forEach((link) => {
     if (link !== e.target) link.style.opacity = this;
   });
@@ -84,8 +84,8 @@ document.body.addEventListener("click", smoothScrolling);
 nav.addEventListener("click", function(e)
 {
   if(!e.target.classList.contains("bar")) return;
-  nav.querySelector('.hamburger').classList.toggle("active");
-  nav.querySelector('.nav-menu').classList.toggle("active");
+  nav.querySelector('.navbar__burger').classList.toggle("active");
+  nav.querySelector('.navbar__menu').classList.toggle("active");
 })
 
 
