@@ -71,9 +71,9 @@ const navFade = function(e) {
 /// --------------------- Accordion
 accordion.addEventListener("click", function (e) 
 {
-  if (e.target.classList.contains("panel-heading-text") || e.target.classList.contains("fa-solid") || e.target.classList.contains("panel-heading")) 
+  if (e.target.classList.contains("panel-heading-text") || e.target.classList.contains("fa-solid") || e.target.classList.contains("accordion__panel-heading")) 
   {
-    e.target.closest(".panel").classList.toggle("active");
+    e.target.closest(".accordion__panel").classList.toggle("accordion__panel--active");
   };
 })
 

@@ -137,18 +137,18 @@ foreach ($data['projects'] as $index => $project)
 
       <div id="contact" class="dots"></div>
 
-      <section class="get-inTouch">
+      <section class="contact">
         <div class="container">
           <h2 class="title">Contact Me</h2>
 
           <div class="accordion">
 
-            <div class="panel  send-message">
-              <div class="panel-heading">
+            <div class="accordion__panel  send-message">
+              <div class="accordion__panel-heading">
                 <h3 class="panel-heading-text">Send me a Message</h3>
-                <span><i class="fa-sharp fa-solid fa-angle-down"></i></span>
+                <span><i class="fa-sharp fa-solid fa-angle-down accordion__panel-arrow"></i></span>
               </div>
-              <div class="panel-content ">
+              <div class="accordion__panel-content ">
                 <form action="send-email.php" method="GET">
                   <div class="input-group name">
                     <label for="name_input">
@@ -174,19 +174,19 @@ foreach ($data['projects'] as $index => $project)
               </div>
             </div>
 
-            <div class="panel contact-me">
-              <div class="panel-heading">
+            <div class="accordion__panel contact-me">
+              <div class="accordion__panel-heading">
                 <h3 class="panel-heading-text">Contact Details</h3>
-                <span><i class="fa-sharp fa-solid fa-angle-down"></i></span>
+                <span><i class="fa-sharp fa-solid fa-angle-down accordion__panel-arrow"></i></span>
               </div>
-              <div class="panel-content">
-                <div class="contact-details-container">
+              <div class="accordion__panel-content">
+                <div class="contact__details-box">
                   <div class="contact-details mobile-details">
-                    <h2 class="card-title">Mobile Number:</h2>
+                    <h2 class="accordion__title">Mobile Number:</h2>
                     <p>07720 287143</p>
                   </div>
                   <div class="contact-details email-details">
-                    <h2 class="card-title">Email:</h2>
+                    <h2 class="accordion__title">Email:</h2>
                     <p>benito_bec@hotmail.com</p>
                   </div>
                 </div>

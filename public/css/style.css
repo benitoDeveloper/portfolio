@@ -307,10 +307,56 @@ section {
 }
 
 /* ------------------ >>> Get in Touch  */
-.get-inTouch {
+.contact {
   margin-bottom: 130px;
 }
-.get-inTouch .panel {
+.contact__details-box {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px;
+}
+.contact__details {
+  text-align: center;
+  line-height: 2;
+}
+.contact form {
+  background-color: #353a40;
+  padding: 15px;
+}
+.contact form .input-group {
+  margin-bottom: 15px;
+}
+.contact form label {
+  display: flex;
+}
+.contact form .fa-solid,
+.contact form input {
+  padding: 0.5rem 1rem;
+}
+.contact form .fa-solid {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 5px 0 0 5px;
+  height: 100%;
+}
+.contact form input,
+.contact form textarea {
+  width: 100%;
+  border: 1px solid #ced4da;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  padding: 0.5rem 1rem;
+}
+.contact form .fa-user:before,
+.contact form .fa-envelope:before,
+.contact form .fa-pencil:before {
+  color: #495057;
+}
+.contact form .fa-pencil:before {
+  vertical-align: -100%;
+}
+
+.accordion__panel {
   width: 50%;
   margin: auto;
   margin-bottom: 20px;
@@ -320,19 +366,19 @@ section {
   border-radius: 5px;
   padding: 20px 35px;
 }
-.get-inTouch .panel.active .panel-content {
+.accordion__panel--active .accordion__panel-content {
   max-height: clamp(0px, 100vh, 500px);
   margin-top: 25px;
 }
-.get-inTouch .panel.active .fa-sharp {
+.accordion__panel--active .accordion__panel-arrow {
   transform: rotate(180deg);
 }
-.get-inTouch .panel-heading {
+.accordion__panel-heading {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
 }
-.get-inTouch .panel-content {
+.accordion__panel-content {
   max-height: 0;
   overflow: hidden;
   transition: 0.4s;
@@ -340,53 +386,8 @@ section {
   background-color: #353a40;
   color: #fff;
 }
-.get-inTouch .fa-sharp {
+.accordion__panel .fa-sharp {
   transition: 0.4s;
-}
-.get-inTouch form {
-  background-color: #353a40;
-  padding: 15px;
-}
-.get-inTouch form .input-group {
-  margin-bottom: 15px;
-}
-.get-inTouch form label {
-  display: flex;
-}
-.get-inTouch form .fa-solid,
-.get-inTouch form input {
-  padding: 0.5rem 1rem;
-}
-.get-inTouch form .fa-solid {
-  background-color: #e9ecef;
-  border: 1px solid #ced4da;
-  border-radius: 5px 0 0 5px;
-  height: 100%;
-}
-.get-inTouch form input,
-.get-inTouch form textarea {
-  width: 100%;
-  border: 1px solid #ced4da;
-  border-left: none;
-  border-radius: 0 5px 5px 0;
-  padding: 0.5rem 1rem;
-}
-.get-inTouch form .fa-user:before,
-.get-inTouch form .fa-envelope:before,
-.get-inTouch form .fa-pencil:before {
-  color: #495057;
-}
-.get-inTouch form .fa-pencil:before {
-  vertical-align: -100%;
-}
-.get-inTouch .contact-details-container {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 15px;
-}
-.get-inTouch .contact-details {
-  text-align: center;
-  line-height: 2;
 }
 
 /* ------------------ >>> Footer  */
@@ -411,16 +412,13 @@ footer i:hover {
 
 /* ------------------ >>> Responsive  */
 @media screen and (max-width: 1200px) {
-  .projects .projects-slider-container .slider-btn {
+  .slider__btn {
     font-size: 45px;
   }
-  .projects .projects-slider-container .fa-solid, .projects .projects-slider-container .fas {
-    opacity: 0.5;
-  }
-  .projects .projects-slider-container .slider-btn-left {
+  .slider__btn-left {
     left: 3%;
   }
-  .projects .projects-slider-container .slider-btn-right {
+  .slider__btn-right {
     right: 3%;
   }
 }
@@ -438,16 +436,16 @@ footer i:hover {
     margin: auto;
   }
   /* -----------  >>>>> accordion */
-  .projects .projects-slider-container .projects-slider-track-holder {
+  .slider__track-holder {
     max-width: 740px;
   }
-  .projects .projects-slider-container .slider-btn-left {
+  .slider__btn-left {
     left: 5vw;
   }
-  .projects .projects-slider-container .slider-btn-right {
+  .slider__btn-right {
     right: 5vw;
   }
-  .get-inTouch .panel {
+  .accordion__panel {
     width: 100%;
   }
 }
@@ -487,24 +485,24 @@ footer i:hover {
   .dots {
     margin: 100px auto;
   }
-  .projects .indicator-container {
-    display: none;
-  }
-  .projects .projects-slider-container {
+  .slider {
     width: 99%;
     margin: auto;
   }
-  .projects .projects-slider-container .projects-slider-track-holder {
+  .slider__indicator {
+    display: none;
+  }
+  .slider__track-holder {
     max-width: 100%;
   }
-  .projects .card-holder {
+  .slider__card-holder {
     width: 100vw;
   }
-  .projects .title-heading {
+  .accordion__heading {
     font-size: 3rem;
     line-height: 1.25;
   }
-  .projects .title-subHeading {
+  .accordion__subHeading {
     font-size: 1rem;
   }
   .introduction {
@@ -513,8 +511,8 @@ footer i:hover {
   .introduction__img {
     width: 100%;
   }
-  .contact-details-container {
+  .contact__details-box {
     flex-direction: column;
-    gap: 2rem;
+    gap: 0.5rem;
   }
 }/*# sourceMappingURL=style.css.map */
