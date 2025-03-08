@@ -495,9 +495,6 @@ footer i:hover {
   .slider__track-holder {
     max-width: 100%;
   }
-  .slider__card-holder {
-    width: 100vw;
-  }
   .accordion__heading {
     font-size: 3rem;
     line-height: 1.25;

@@ -529,7 +529,7 @@ footer
             }
             &__btn-left 
             {
-                  left: 5vw
+                  left: 5vw;
             }
             &__btn-right 
             {
@@ -604,10 +604,6 @@ footer
             &__track-holder
             {
             max-width: 100%;
-            }
-            &__card-holder
-            {
-              width: 100vw;
             }
       }
       .accordion
