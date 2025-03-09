@@ -1,0 +1,14 @@
+.dots 
+{
+      border-top: dotted 1rem $navyBlue;
+      opacity: 0.5;
+      width: 150px;
+      margin: 200px auto;
+}
+@media screen and (max-width: 720px)
+{
+      .dots 
+      {
+        margin: 100px auto;
+      }
+}

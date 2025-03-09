@@ -1,0 +1,51 @@
+.introduction 
+{
+      display: flex;
+      gap: 2rem;
+      &__text-box 
+      {
+            flex: 1;
+      }
+      .introduction__title
+      {
+            text-align: left;
+      }
+      &__text p 
+      {
+            line-height: 1.4;
+            margin-bottom: 16px;
+      }
+      &__img 
+      {
+            background-image: url(../img/chilling.jpg);
+            background-position: center center;
+            background-size: cover;
+            flex: 1;
+            border-radius: 5px;
+      }
+}
+@media screen and (max-width: 960px)
+{
+      .introduction 
+      {
+        flex-direction: column;
+        &__img 
+        {
+          flex: unset;
+          width: 85%;
+          aspect-ratio: 1/1;
+          margin: auto;
+        }
+      }
+}
+@media screen and (max-width: 720px)
+{
+      .introduction 
+      {
+        text-align: left;
+        &__img
+        {
+          width: 100%;
+        }
+      }
+}

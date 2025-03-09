@@ -1,0 +1,26 @@
+
+$backup: sans-serif;
+$primary: "lato", $backup;
+$navFont: "Noto Sans", $backup;
+$bgHeading: "sacramento", cursive;
+$bgSubheading: "Montserrat", $backup;
+
+body
+{
+      font-family: $primary;
+}
+.navbar__option
+{
+      font-family: $navFont;
+}
+.background
+{
+      &__heading
+      {
+            font-family: $bgHeading;
+      }
+      &__subHeading
+      {
+            font-family: $bgSubheading;
+      }
+}

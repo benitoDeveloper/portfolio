@@ -1,0 +1,67 @@
+.contact 
+{
+      margin-bottom: 130px;
+      &__details-box 
+      {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 15px;
+      }
+      &__details 
+      {
+            text-align: center;
+            line-height: 2;
+      }
+      form 
+      {
+            background-color: $primary-color;
+            padding: 15px;
+            .input-group 
+            {
+                  margin-bottom: 15px;
+            }
+            label
+            {
+                  display: flex;
+            }
+            .fa-solid,
+            input 
+            {
+                  padding: 0.5rem 1rem
+            }
+            .fa-solid 
+            {
+                  background-color: #e9ecef;
+                  border: 1px solid #ced4da;
+                  border-radius: 5px 0 0 5px;
+                  height: 100%;
+            }
+            input,
+            textarea 
+            {
+                  width: 100%;
+                  border: 1px solid #ced4da;
+                  border-left: none;
+                  border-radius: 0 5px 5px 0;
+                  padding: 0.5rem 1rem;
+            }
+            .fa-user:before,
+            .fa-envelope:before,
+            .fa-pencil:before 
+            {
+                  color: #495057;
+            }
+            .fa-pencil:before 
+            {
+                  vertical-align: -100%;
+            }
+      }
+}
+@media screen and (max-width: 720px)
+{
+      .contact__details-box 
+      {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+}

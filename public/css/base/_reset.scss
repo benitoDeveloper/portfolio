@@ -1,0 +1,35 @@
+
+* 
+{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+}
+body 
+{
+      font-size: 18px;
+      overflow-x: hidden;
+}
+ul 
+{
+      list-style-type: none;
+      line-height: 1.4;
+      margin-bottom: 16px;
+}
+h4 
+{
+      @include font(1.5rem,1.4);
+      margin-bottom: 0.75rem;
+ }
+p,li 
+{
+      @include font(1rem,1.5);
+      margin-bottom: 0.75rem;
+}
+.title 
+{
+      @include font(2rem,1.3);
+      margin-bottom: 1rem;
+      font-weight: 600;
+      text-align: center;;
+}

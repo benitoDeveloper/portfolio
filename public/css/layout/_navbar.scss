@@ -1,0 +1,111 @@
+.navbar
+{
+      background-color: $primary-color;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      .navbar__container 
+      {
+            display: flex;
+            justify-content: space-between;
+            z-index: 2;
+      }
+      a
+      {
+            padding: 0.5rem;
+      }
+      &__logo
+      {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;  
+      }
+      &__menu
+      {
+            display: flex;
+            justify-content: center;
+            width: 30%;
+            align-items: center;
+            transition: ease-in-out 0.8s;
+            margin-bottom: 0;
+      }
+      &__option
+      {
+            list-style: none;
+            padding: 8px;
+            opacity: 1;
+            font-size: 16px;
+            margin-bottom: 0;
+      }
+      &__link
+      {
+            text-decoration: none;
+            color: $light-grey ;
+      }
+      a:hover,
+      li:hover
+      {
+            scale: 0.96;
+            cursor: pointer;
+      }
+      &__burger 
+      {
+            display: none;
+            width: fit-content;
+            align-self: center;
+            cursor: pointer;
+            border: none; 
+            background-color: transparent;
+            margin-right: 20px;
+            .bar 
+            {
+                  width: 30px;
+                  height: 3px;
+                  background: $white-color;
+                  display: block;
+                  margin: 5px 0;
+                  border-radius: 999px;
+                  transition: 0.8s;
+            }
+      }
+}
+@media screen and (max-width: 720px)
+{
+      .navbar
+      {
+            &__burger
+            {
+              display: block;
+              &.active .bar:nth-child(1) 
+              {
+                transform: translateY(4px) rotate(-45deg);
+              }
+              &.active .bar:nth-child(2) 
+              {
+                opacity: 0;
+              }
+              &.active .bar:nth-child(3) 
+              {
+                transform: translateY(-10.5px) rotate(45deg);
+              }
+            }
+            .navbar__menu 
+            {
+              position: absolute;
+              top: -70vh;
+              right: 0;
+              flex-direction: column;
+              width: 100vw;
+              align-items: center;
+              justify-content: center;
+              opacity: 0.8;
+              padding: 65px 0 20px;
+              &.active 
+              {
+                background-color: $primary-color;
+                top: 0;
+              }        
+            }
+      }
+}

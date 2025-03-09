@@ -1,0 +1,22 @@
+footer 
+{
+      background-color: $primary-color;
+      .socials 
+      {
+            height: 125px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15vw;
+      }
+      .footer-link 
+      {
+            color: $light-grey;
+            font-size: 20px;
+      }
+      i:hover 
+      {
+            scale: 0.96;
+            opacity: 0.5;
+      }
+}

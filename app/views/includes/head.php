@@ -17,8 +17,7 @@ $menu_arr = ["home", "hola", "projects", "contact"];
         })(window,document,'script','dataLayer','GTM-5ZV5GBG');</script>
         <!-- End Google Tag Manager -->
 
-        <link rel="stylesheet" href="<?=URLROOT?>public/css/style.css"/>
-        <link rel="stylesheet" href="<?=URLROOT?>public/css/style.css"/>
+        <link rel="stylesheet" href="<?=URLROOT?>public/css/main.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Lora&family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
         rel="stylesheet"/>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous"/>

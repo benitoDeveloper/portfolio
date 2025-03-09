@@ -112,7 +112,7 @@ class Slider
 
 const slider_container = document.querySelector(".slider");
 const sliderTrack = slider_container.querySelector('.slider__track');
-const sliderElement = slider_container.querySelector('.slider__track-holder');
+const sliderElement = slider_container.querySelector('.slider__card-holder');
 const allCards = Array.from(slider_container.querySelectorAll(".slider__card-holder"));
 const allCardsCount = allCards.length;
 const indicator_container = document.querySelector(".slider__indicator");
