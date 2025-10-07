@@ -112,7 +112,7 @@ class Slider
 
 const slider_container = document.querySelector(".slider");
 const sliderTrack = slider_container.querySelector('.slider__track');
-const sliderElement = slider_container.querySelector('.slider__card-holder');
+const sliderElement = slider_container.querySelector('.slider__track');
 const allCards = Array.from(slider_container.querySelectorAll(".slider__card-holder"));
 const allCardsCount = allCards.length;
 const indicator_container = document.querySelector(".slider__indicator");
@@ -132,17 +132,22 @@ slider_container.addEventListener("click", function(e)
       {
             slider.subtractToIndex();
       }
-
-      sliderTrack.style.transform = `translateX(${-slider.slide_arr[slider.index] }px)`;
+      sliderTrack.style.transform = `translateX(${-slider.slide_arr[slider.index]}px)`;
 
       if(slider.screen_size > 720) 
-            {
-                  slider.indicator.switch_indicator(indicator_container, slider.index);
-            }
+      {
+            slider.indicator.switch_indicator(indicator_container, slider.index);
+      }
 })
 document.addEventListener("DOMContentLoaded", () =>
 {
       slider.indicator.buildIndicator(slider.maxSlides,indicator_container);
+})
+window.addEventListener('resize', () =>
+{
+      slider.update_slide_arr();
+      slider.update_screen_size();
+      slider.update_max_slides();
 })
 
 
