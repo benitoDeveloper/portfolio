@@ -36,7 +36,7 @@
       <div id="hola" class="dots"></div>
       <section  class="introduction container">
         <div class="introduction__text-box ">
-          <h2 class="introduction__title title">Hola!/h3>
+          <h2 class="introduction__title title">Hola!</h2>
           <div class="introduction__text">
             <p>
                 I'm Benito, a passionate Web Developer who likes solving problems and building functional, beautiful websites
