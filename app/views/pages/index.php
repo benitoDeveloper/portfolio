@@ -96,7 +96,7 @@ foreach ($data['projects'] as $index => $project)
         <div data-slide=<?= $index + 1 ?> class="slider__card">
             <img 
             src=
-            "<?=URLROOT . 'public/img/' . $project->lr_image . '.jpg'?>" data-src="<?=URLROOT . 'public/img/' . $project->hr_image . '.jpg'?>" 
+            "<?=URLROOT . 'public/img/' . $project->lr_image . '.jpg'?>" data-src="<?=URLROOT . 'img/' . $project->hr_image . '.jpg'?>" 
             height="172" alt="<?=$project->alt_text?>" 
             class="slider__card-image" 
             />
